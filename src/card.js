@@ -1,8 +1,6 @@
 function querystring() {
-  var href = "http://xxx?userhash=1f644a1b7da169d2b56e1a4c6da61fea \
-                          &key1=answer&key2=agree&key3=thanks"
-    // var href = window.location.href,
-  var kv;
+  var href = window.location.href,
+    kv;
   var params = href.slice(href.indexOf('?') + 1).split('&');
   var qs = [];
 
