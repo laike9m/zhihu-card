@@ -139,7 +139,6 @@ var qs = querystring();
       card.className = 'zhihu-card';
       card.innerHTML = template(data);
       linky(card);
-      console.log(data);
     });
   }
 
