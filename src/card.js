@@ -16,18 +16,26 @@ function querystring() {
 
 var qs = querystring();
 
-var eng2ch = {
-  "ask": "提问",
-  "answer": "回答",
-  "post": "文章",
-  "agree": "赞同",
-  "thanks": "感谢",
-  "follower": "关注者"
-};
-
 (function(d) {
-  var baseurl = 'http://localhost:8000/v1/user/',
+  var apiUrl = 'http://localhost:8000/v1/user/',
+    userUrl = "https://www.zhihu.com/people/",
     i;
+  var eng2ch = {
+    "ask": "提问",
+    "answer": "回答",
+    "post": "文章",
+    "agree": "赞同",
+    "thanks": "感谢",
+    "follower": "关注者"
+  };
+  var eng2path = {
+    "ask": "asks",
+    "answer": "answers",
+    "post": "posts",
+    "agree": "",
+    "thanks": "",
+    "follower": "followers"
+  };
 
   function store(key, value) {
     try {
@@ -46,9 +54,7 @@ var eng2ch = {
     } catch (e) {}
   }
 
-  function valueof() {
-
-  }
+  function valueof() {}
 
   function template(data) {
     // 填充模版中的变量
@@ -67,7 +73,7 @@ var eng2ch = {
     var cache = store(url);
     if (cache && cache._timestamp) {
       // cache for 6 hours, set to 21600 in production
-      if (new Date().valueOf() - cache._timestamp < 1) {
+      if (new Date().valueOf() - cache._timestamp < 21600) {
         return callback(cache);
       }
     }
@@ -85,7 +91,7 @@ var eng2ch = {
 
   function zhihuCard(userhash) {
 
-    var url = baseurl + userhash;
+    var url = apiUrl + userhash;
     request(url, function(data) {
 
       data = data || {};
@@ -96,7 +102,6 @@ var eng2ch = {
       } else {
         store(url, data);
       }
-      data.name = escape(data.name);
       var key1 = qs.key1,
         key2 = qs.key2,
         key3 = qs.key3
@@ -106,6 +111,9 @@ var eng2ch = {
       data['key1'] = eng2ch[key1]
       data['key2'] = eng2ch[key2]
       data['key3'] = eng2ch[key3]
+      data['key1_url'] = userUrl + data.domain + '/' + eng2path[key1]
+      data['key2_url'] = userUrl + data.domain + '/' + eng2path[key2]
+      data['key3_url'] = userUrl + data.domain + '/' + eng2path[key3]
 
       var card = d.createElement('div');
       card.className = 'zhihu-card';
