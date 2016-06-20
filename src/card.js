@@ -85,8 +85,30 @@ var qs = querystring();
     xhr.send();
   }
 
-  function linky() {
-    // 填充card links
+  function linky(card) {
+    // 填充 target, set iframe height
+    var links = card.getElementsByTagName('a');
+    for (i = 0; i < links.length; i++) {
+      (function(link) {
+        link.target = '_' + (qs.target || 'blank');
+      })(links[i]);
+    }
+    d.body.appendChild(card);
+    d.body.className = 'ready';
+    if (parent !== self && parent.postMessage) {
+      var height = Math.max(
+        d.body.scrollHeight,
+        d.documentElement.scrollHeight,
+        d.body.offsetHeight,
+        d.documentElement.offsetHeight,
+        d.body.clientHeight,
+        d.documentElement.clientHeight
+      );
+      parent.postMessage({
+        height: height,
+        sender: qs.identity || '*'
+      }, '*');
+    }
   }
 
   function zhihuCard(userhash) {
@@ -118,9 +140,7 @@ var qs = querystring();
       var card = d.createElement('div');
       card.className = 'zhihu-card';
       card.innerHTML = template(data);
-      // linky(card);
-      console.log(data)
-      console.log(card)
+      linky(card);
     });
   }
 
@@ -129,7 +149,7 @@ var qs = querystring();
     if (num < 10000) {
       return num.toString();
     }
-    num = num / 1000;
+    num = parseInt(num / 1000);
     return num.toFixed(0) + 'k';
   }
 
