@@ -124,21 +124,22 @@ var qs = querystring();
       }
       var key1 = qs.key1,
         key2 = qs.key2,
-        key3 = qs.key3
-      data['key1_data'] = numberic(data[key1]) || defaults
-      data['key2_data'] = numberic(data[key2]) || defaults
-      data['key3_data'] = numberic(data[key3]) || defaults
-      data['key1'] = eng2ch[key1]
-      data['key2'] = eng2ch[key2]
-      data['key3'] = eng2ch[key3]
-      data['key1_url'] = userUrl + data.domain + '/' + eng2path[key1]
-      data['key2_url'] = userUrl + data.domain + '/' + eng2path[key2]
-      data['key3_url'] = userUrl + data.domain + '/' + eng2path[key3]
+        key3 = qs.key3;
+      data['key1_data'] = numberic(data[key1]) || defaults;
+      data['key2_data'] = numberic(data[key2]) || defaults;
+      data['key3_data'] = numberic(data[key3]) || defaults;
+      data['key1'] = eng2ch[key1];
+      data['key2'] = eng2ch[key2];
+      data['key3'] = eng2ch[key3];
+      data['key1_url'] = userUrl + data.domain + '/' + eng2path[key1];
+      data['key2_url'] = userUrl + data.domain + '/' + eng2path[key2];
+      data['key3_url'] = userUrl + data.domain + '/' + eng2path[key3];
 
       var card = d.createElement('div');
       card.className = 'zhihu-card';
       card.innerHTML = template(data);
       linky(card);
+      console.log(data);
     });
   }
 

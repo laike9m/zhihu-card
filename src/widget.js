@@ -31,35 +31,20 @@
     }
   }
 
-  function render(card, cardurl) {
-    cardurl = cardurl || client_url;
-    if (!cardurl) {
-      var theme = querydata(card, 'theme') || 'zhihu';
-      cardurl = base + 'theme/' + theme + '.html';
-    }
-    var user = querydata(card, 'user');
-    var repo = querydata(card, 'repo');
-    var github = querydata(card, 'github');
-    if (github) {
-      github = github.split('/');
-      if (github.length && !user) {
-        user = github[0];
-        repo = repo || github[1];
-      }
-    }
-    if (!user) {
+  function render(card) {
+    var theme = querydata(card, 'theme') || 'zhihu';
+    cardurl = base + 'theme/' + theme + '.html';
+    var userhash = querydata(card, 'userhash');
+    if (!userhash) {
       return;
     }
-
     count += 1;
     var width = querydata(card, 'width');
     var height = querydata(card, 'height');
-    var target = querydata(card, 'target');
-
-    var key = querydata(card, 'client-id') || client_id;
-    var secret = querydata(card, 'client-secret') || client_secret;
-
-    var identity = 'ghcard-' + user + '-' + count;
+    var key1 = querydata(card, 'key1');
+    var key2 = querydata(card, 'key2');
+    var key3 = querydata(card, 'key3');
+    var identity = 'ghcard-' + userhash + '-' + count;
 
     var iframe = d.createElement('iframe');
     iframe.setAttribute('id', identity);
@@ -67,16 +52,8 @@
     iframe.setAttribute('scrolling', 0);
     iframe.setAttribute('allowtransparency', true);
 
-    var url = cardurl + '?user=' + user + '&identity=' + identity;
-    if (repo) {
-      url += '&repo=' + repo;
-    }
-    if (target) {
-      url += '&target=' + target;
-    }
-    if (key && secret) {
-      url += '&client_id=' + key + '&client_secret=' + secret;
-    }
+    var url = cardurl + '?userhash=' + userhash + '&identity=' + identity;
+    url += '&key1=' + key1 + '&key2=' + key2 + '&key3=' + key3;
     iframe.src = url;
     iframe.width = width || Math.min(card.parentNode.clientWidth || 400, 400);
     if (height) {
@@ -87,13 +64,8 @@
     return iframe;
   }
 
-  var cards = queryclass('github-card');
+  var cards = queryclass('zhihu-card');
   for (i = 0; i < cards.length; i++) {
     render(cards[i]);
   }
-
-  if (window.githubCard) {
-    window.githubCard.render = render;
-  }
-
 })(document);
