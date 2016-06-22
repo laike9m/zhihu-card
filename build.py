@@ -64,12 +64,12 @@ def create_widget():
     with open('package.json') as f:
         pkg = json.load(f)
 
-    url = '//cdn.jsdelivr.net/github-cards/%s/' % pkg['version']
+    url = '//cdn.jsdelivr.net/zhihu-card/%s/' % pkg['version']
 
     with open('src/widget.js') as f:
         content = f.read()
         content = content.replace(
-            'var base = "http://lab.lepture.com/github-cards/";',
+            'var base = "";',
             'var base = "%s";' % url
         )
 
@@ -77,7 +77,7 @@ def create_widget():
     with open('jsdelivr/widget.js', 'wb') as f:
         f.write(js)
 
-# create_widget()
+create_widget()
 
 if not os.path.isdir('jsdelivr/theme'):
     os.makedirs('jsdelivr/theme')
