@@ -52,6 +52,8 @@ def create_card(theme):
 
     with open('src/card.js', 'rb') as f:
         content = f.read()
+        # use real API url
+        content = content.replace('localhost', '101.200.153.141')
 
     js = shell(['uglifyjs', '-m'], content)
 

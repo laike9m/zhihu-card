@@ -16,7 +16,6 @@ var qs = querystring();
 
 (function(d) {
   var apiUrl = 'http://localhost:8000/v1/user/',
-    // var apiUrl = 'http://101.200.153.141:8000/v1/user/',
     userUrl = "https://www.zhihu.com/people/",
     i;
   var eng2ch = {
