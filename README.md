@@ -2,7 +2,7 @@
 
 [(Eng ver.)](#english-version)  
 用卡片展示你的知乎账户：  
-![](https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao.png=600px)
+<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao.png" width="500px">
 
 ## 使用
 
@@ -30,7 +30,7 @@
 ### 获取 userhash
 在个人主页里（比如 https://www.zhihu.com/people/laike9m ），打开页面调试工具，搜索 `user_hash`，结果如下图所示:
 
-![](https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/userhash.png)
+<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/userhash.png" width="600px">
 
 ## 例子
 ```html
@@ -81,7 +81,7 @@ Available data parameters are:
 ## Where to find your userhash
 Go to your profile page, for me it's https://www.zhihu.com/people/laike9m. Inspect this page and search for `user_hash`. See example below:
 
-![](https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/userhash.png)
+<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/userhash.png" width="600px">
 
 ## 致谢
 特别感谢 @lepture 和他的 [github-cards](https://github.com/lepture/github-cards) 库。zhihu-card 的前端部分完全是照着 github-cards 写的。
