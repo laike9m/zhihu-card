@@ -70,10 +70,7 @@ def create_widget():
 
     with open('src/widget.js') as f:
         content = f.read()
-        content = content.replace(
-            'var base = "";',
-            'var base = "%s";' % url
-        )
+        content = content.replace('replacethis', url)
 
     js = shell(['uglifyjs', '-m'], content)
     with open('jsdelivr/widget.js', 'wb') as f:

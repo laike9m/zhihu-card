@@ -1,5 +1,5 @@
 (function(d) {
-  var base = "";
+  var base = window.laike9mdev ? "" : "replacethis";
   var i, count = 0;
   var client_url, client_id, client_secret, client_theme;
 
@@ -44,7 +44,7 @@
     var key1 = querydata(card, 'key1');
     var key2 = querydata(card, 'key2');
     var key3 = querydata(card, 'key3');
-    var identity = 'ghcard-' + userhash + '-' + count;
+    var identity = 'zhcard-' + userhash + '-' + count;
 
     var iframe = d.createElement('iframe');
     iframe.setAttribute('id', identity);
