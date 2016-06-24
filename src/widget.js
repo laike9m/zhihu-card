@@ -41,9 +41,9 @@
     count += 1;
     var width = querydata(card, 'width');
     var height = querydata(card, 'height');
-    var key1 = querydata(card, 'key1');
-    var key2 = querydata(card, 'key2');
-    var key3 = querydata(card, 'key3');
+    var key1 = querydata(card, 'key1') || 'answer';
+    var key2 = querydata(card, 'key2') || 'agree';
+    var key3 = querydata(card, 'key3') || 'follower';
     var identity = 'zhcard-' + userhash + '-' + count;
 
     var iframe = d.createElement('iframe');
