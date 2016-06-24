@@ -36,7 +36,7 @@
 ```
 
 # 在哪能找到 userhash
-在个人主页里（比如 https://www.zhihu.com/people/laike9m），打开页面调试工具，搜索 `user_hash`，结果如下图所示:
+在个人主页里（比如 https://www.zhihu.com/people/laike9m ），打开页面调试工具，搜索 `user_hash`，结果如下图所示:
 
 ![](https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/userhash.png)
 
@@ -54,10 +54,10 @@ Put `<div>` where you want your zhihu card to be displayed.
 ```html
 <div class="zhihu-card" data-userhash="6487fb46d752cc83f9a5eebf2134ed1c"></div>
 ```
-Avalaible data parameters are:
+Available data parameters are:
 * `width`: card width, default is 400
 * `height`: card height
-* `key1`, `key2`, `key3`: control values displayed in three columns, avalaible values and their meaning are shown below:
+* `key1`, `key2`, `key3`: control values displayed in three columns, available values and their meaning are shown below:
 
     | value     | meaning       |
     |----------|------------|
