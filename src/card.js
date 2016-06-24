@@ -134,6 +134,7 @@ var qs = querystring();
       data['key1_url'] = userUrl + data.domain + '/' + eng2path[key1];
       data['key2_url'] = userUrl + data.domain + '/' + eng2path[key2];
       data['key3_url'] = userUrl + data.domain + '/' + eng2path[key3];
+      data.avatar = data.avatar.replace('https', 'http')
 
       var card = d.createElement('div');
       card.className = 'zhihu-card';
