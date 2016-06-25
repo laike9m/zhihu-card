@@ -1,6 +1,6 @@
 {
     "name": "zhihu-card",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Card to display your zhihu profile",
     "author": "laike9m <laike9m@gmail.com>",
     "scripts": {
