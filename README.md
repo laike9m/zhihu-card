@@ -1,4 +1,4 @@
-# zhihu-card
+# zhihu-card (<a  href="http://codepen.io/laike9m/pen/zBNmrj" target="_blank">Try it!</a>)
 
 [(Eng ver.)](#english-version)  
 用卡片展示你的知乎账户：  
