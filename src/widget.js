@@ -64,11 +64,6 @@
     return iframe;
   }
 
-  var noreferrer = document.createElement('meta')
-  noreferrer.name = "referrer"
-  noreferrer.content = "no-referrer"
-  d.head.appendChild(noreferrer);
-
   var cards = queryclass('zhihu-card');
   for (i = 0; i < cards.length; i++) {
     render(cards[i]);

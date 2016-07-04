@@ -153,6 +153,10 @@ var qs = querystring();
     return num.toFixed(0) + 'k';
   }
 
+  var noreferrer = d.createElement('meta');
+  noreferrer.name = "referrer";
+  noreferrer.content = "no-referrer";
+  d.head.appendChild(noreferrer);
   zhihuCard(qs.userhash);
 
   function escape(text) {
