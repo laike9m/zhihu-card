@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>zhihu-card by laike9m</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>zhihu-card</h1>
+        <h2>用卡片展示你的知乎账户</h2>
+        <a href="https://github.com/laike9m/zhihu-card" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="zhihu-card-try-it" class="anchor" href="#zhihu-card-try-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>zhihu-card (<a href="http://codepen.io/laike9m/pen/zBNmrj">Try it!</a>)</h1>
+
+<p><a href="#english-version">(Eng ver.)</a><br>
+用卡片展示你的知乎账户：<br>
+<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao.png" width="500px"></p>
+
+<h2>
+<a id="使用" class="anchor" href="#%E4%BD%BF%E7%94%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用</h2>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>zhihu-card<span class="pl-pds">"</span></span> <span class="pl-e">data-userhash</span>=<span class="pl-s"><span class="pl-pds">"</span>1f644a1b7da169d2b56e1a4c6da61fea<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//cdn.jsdelivr.net/zhihu-card/latest/widget.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>注意 <code>widget.js</code> 一定要放在 <code>&lt;div&gt;</code> 的后面。</p>
+
+<p>其它可用的 <code>data-xx</code> 参数包括:</p>
+
+<ul>
+<li>
+<code>width</code>: 卡片宽度，默认值是 400</li>
+<li>
+<code>height</code>: 卡片高度</li>
+<li>
+<p><code>key1</code>, <code>key2</code>, <code>key3</code>: 卡片的三栏中显示数值的类型，取值和含义如下：</p>
+
+<table>
+<thead>
+<tr>
+<th>取值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ask</td>
+<td>提问数量</td>
+</tr>
+<tr>
+<td>answer</td>
+<td>回答数量</td>
+</tr>
+<tr>
+<td>post</td>
+<td>文章数量</td>
+</tr>
+<tr>
+<td>agree</td>
+<td>赞同数量</td>
+</tr>
+<tr>
+<td>thanks</td>
+<td>感谢数量</td>
+</tr>
+<tr>
+<td>follower</td>
+<td>关注者数量</td>
+</tr>
+</tbody>
+</table>
+
+<p>默认值 <code>key1=answer, key2=agree, key3=follower</code></p>
+</li>
+</ul>
+
+<h3>
+<a id="获取-userhash" class="anchor" href="#%E8%8E%B7%E5%8F%96-userhash" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>获取 userhash</h3>
+
+<p>在个人主页里（比如 <a href="https://www.zhihu.com/people/laike9m">https://www.zhihu.com/people/laike9m</a> ），打开页面调试工具，搜索 <code>user_hash</code>，结果如下图所示:</p>
+
+<p><img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/userhash.png" width="600px"></p>
+
+<h2>
+<a id="例子" class="anchor" href="#%E4%BE%8B%E5%AD%90" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>例子</h2>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>zhihu-card<span class="pl-pds">"</span></span> <span class="pl-e">data-userhash</span>=<span class="pl-s"><span class="pl-pds">"</span>1f644a1b7da169d2b56e1a4c6da61fea<span class="pl-pds">"</span></span>
+    <span class="pl-e">data-width</span>=<span class="pl-s"><span class="pl-pds">"</span>400<span class="pl-pds">"</span></span> <span class="pl-e">data-height</span>=<span class="pl-s"><span class="pl-pds">"</span>300<span class="pl-pds">"</span></span> <span class="pl-e">data-key1</span>=<span class="pl-s"><span class="pl-pds">"</span>answer<span class="pl-pds">"</span></span> <span class="pl-e">data-key2</span>=<span class="pl-s"><span class="pl-pds">"</span>agree<span class="pl-pds">"</span></span> <span class="pl-e">data-key3</span>=<span class="pl-s"><span class="pl-pds">"</span>post<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//cdn.jsdelivr.net/zhihu-card/latest/widget.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<h2>
+<a id="mixed-content" class="anchor" href="#mixed-content" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mixed Content</h2>
+
+<p>由于后端 API 是非 HTTPS 的，在 HTTPS 网站上使用时会引发 <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content">mixed content</a> 警告。虽然一般也没什么问题，毕竟个人主页一般不会包含敏感信息。</p>
+
+<p>想彻底解决只能买域名+证书，由于我不想备案所以不打算做。不知道有没有好心人赞助个备案过的域名……</p>
+
+<h1>
+<a id="english-version" class="anchor" href="#english-version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>English Version</h1>
+
+<p>Card to show your profile on <a href="https://www.zhihu.com/">zhihu.com</a>.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>zhihu-card<span class="pl-pds">"</span></span> <span class="pl-e">data-userhash</span>=<span class="pl-s"><span class="pl-pds">"</span>6487fb46d752cc83f9a5eebf2134ed1c<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//cdn.jsdelivr.net/zhihu-card/latest/widget.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>Make sure to place <code>widget.js</code> behind/under <code>&lt;div&gt;</code>.</p>
+
+<p>Available data parameters are:</p>
+
+<ul>
+<li>
+<code>width</code>: card width, default is 400</li>
+<li>
+<code>height</code>: card height</li>
+<li>
+<p><code>key1</code>, <code>key2</code>, <code>key3</code>: control values displayed in three columns, available values and their meaning are shown below:</p>
+
+<table>
+<thead>
+<tr>
+<th>value</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ask</td>
+<td>number of questions</td>
+</tr>
+<tr>
+<td>answer</td>
+<td>number of answers</td>
+</tr>
+<tr>
+<td>post</td>
+<td>number of posts</td>
+</tr>
+<tr>
+<td>agree</td>
+<td>number of agree</td>
+</tr>
+<tr>
+<td>thanks</td>
+<td>number of thanks</td>
+</tr>
+<tr>
+<td>follower</td>
+<td>number of followers</td>
+</tr>
+</tbody>
+</table>
+
+<p>default: <code>key1=answer, key2=agree, key3=follower</code></p>
+</li>
+</ul>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>zhihu-card<span class="pl-pds">"</span></span> <span class="pl-e">data-userhash</span>=<span class="pl-s"><span class="pl-pds">"</span>1f644a1b7da169d2b56e1a4c6da61fea<span class="pl-pds">"</span></span>
+    <span class="pl-e">data-width</span>=<span class="pl-s"><span class="pl-pds">"</span>400<span class="pl-pds">"</span></span> <span class="pl-e">data-height</span>=<span class="pl-s"><span class="pl-pds">"</span>300<span class="pl-pds">"</span></span> <span class="pl-e">data-key1</span>=<span class="pl-s"><span class="pl-pds">"</span>answer<span class="pl-pds">"</span></span> <span class="pl-e">data-key2</span>=<span class="pl-s"><span class="pl-pds">"</span>agree<span class="pl-pds">"</span></span> <span class="pl-e">data-key3</span>=<span class="pl-s"><span class="pl-pds">"</span>post<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//cdn.jsdelivr.net/zhihu-card/latest/widget.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<h2>
+<a id="where-to-find-your-userhash" class="anchor" href="#where-to-find-your-userhash" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Where to find your userhash</h2>
+
+<p>Go to your profile page, for me it's <a href="https://www.zhihu.com/people/laike9m">https://www.zhihu.com/people/laike9m</a>. Inspect this page and search for <code>user_hash</code>. See example below:</p>
+
+<p><img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/userhash.png" width="600px"></p>
+
+<h2>
+<a id="致谢" class="anchor" href="#%E8%87%B4%E8%B0%A2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>致谢</h2>
+
+<p>特别感谢 <a href="https://github.com/lepture" class="user-mention">@lepture</a> 和他的 <a href="https://github.com/lepture/github-cards">github-cards</a> 库。zhihu-card 的前端部分完全是照着 github-cards 写的。</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/laike9m/zhihu-card/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/laike9m/zhihu-card/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/laike9m/zhihu-card"></a> is maintained by <a href="https://github.com/laike9m">laike9m</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
