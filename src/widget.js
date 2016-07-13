@@ -32,7 +32,7 @@
   }
 
   function render(card) {
-    var theme = querydata(card, 'theme') || 'github';
+    var theme = querydata(card, 'theme') || 'zhihu';
     cardurl = base + 'theme/' + theme + '.html';
     var userhash = querydata(card, 'userhash');
     if (!userhash) {

@@ -2,7 +2,8 @@
 
 [(Eng ver.)](#english-version)  
 用卡片展示你的知乎账户：  
-<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao.png" width="500px">
+<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao.png" width="400px">
+<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao-zhihu.png" width="400px">
 
 ## 使用
 
@@ -13,6 +14,7 @@
 注意 `widget.js` 一定要放在 `<div>` 的后面。
 
 其它可用的 `data-xx` 参数包括:
+* `theme`: 卡片外观主题，包括 `zhihu`(default) 和 `github`
 * `width`: 卡片宽度，默认值是 400
 * `height`: 卡片高度
 * `key1`, `key2`, `key3`: 卡片的三栏中显示数值的类型，取值和含义如下：
@@ -35,7 +37,7 @@
 ## 例子
 ```html
 <div class="zhihu-card" data-userhash="1f644a1b7da169d2b56e1a4c6da61fea"
-    data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post"></div>
+    data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
 <script src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
 ```
 
@@ -57,6 +59,7 @@ Card to show your profile on [zhihu.com](https://www.zhihu.com/).
 Make sure to place `widget.js` behind/under `<div>`.
 
 Available data parameters are:
+* `theme`: card appearance theme, options: `zhihu`(default), `github`
 * `width`: card width, default is 400
 * `height`: card height
 * `key1`, `key2`, `key3`: control values displayed in three columns, available values and their meaning are shown below:
@@ -74,7 +77,7 @@ Available data parameters are:
 ## Example
 ```html
 <div class="zhihu-card" data-userhash="1f644a1b7da169d2b56e1a4c6da61fea"
-    data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post"></div>
+    data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
 <script src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
 ```
 
