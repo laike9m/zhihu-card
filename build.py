@@ -81,7 +81,7 @@ create_widget()
 if not os.path.isdir('jsdelivr/theme'):
     os.makedirs('jsdelivr/theme')
 
+create_card('zhihu')
 create_card('github')
-# create_card('zhihu')
 
         
