@@ -70,7 +70,7 @@ var qs = querystring();
   function request(url, callback) {
     var cache = store(url);
     if (cache && cache._timestamp) {
-      // cache for 6 hours, set to 21600000 in production
+      // cache for 6 hours
       if (new Date().valueOf() - cache._timestamp < 21600000) {
         return callback(cache);
       }
