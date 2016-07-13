@@ -1,30 +1,38 @@
+<html>
+<body>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="zhihu.css">
+<script id="zhihu-card" type="text/template">
 <div class="zh-profile-card member">
   <div class="upper">
-    <a class="avatar-link" target="_blank" href="/people/tian-tang-85-80">
-      <img class="Avatar Avatar--xs" src="https://pic3.zhimg.com/7ba46a5f5d1a8773f7216ddcd44d49da_xs.jpg" srcset="https://pic3.zhimg.com/7ba46a5f5d1a8773f7216ddcd44d49da_l.jpg 2x" alt="天唐">
-      <span class="name">天唐</span></a>
+    <a class="avatar-link" href="https://www.zhihu.com/people/{domain}">
+      <img class="Avatar Avatar--xs" src="{avatar}">
+      <span class="name">{name}</span></a>
       <!--<i class="icon icon-profile-male"></i>-->
-    <div class="tagline">谈笑风生</div>
+    <div class="tagline">{signature}</div>
   </div>
   <div class="lower clearfix">
     <div class="meta">
-      <a class="item" target="_blank" href="/people/tian-tang-85-80/answers">
-        <span class="value">20</span>
-        <span class="key">回答</span>
+      <a class="item" href="{key1_url}">
+        <span class="value">{key1_data}</span>
+        <span class="key">{key1}</span>
       </a>
-      <a class="item" target="_blank" href="/people/tian-tang-85-80/posts">
-        <span class="value">2</span>
-        <span class="key">文章</span>
+      <a class="item" href="{key2_url}">
+        <span class="value">{key2_data}</span>
+        <span class="key">{key2}</span>
       </a>
-      <a class="item" target="_blank" href="/people/tian-tang-85-80/followers">
-        <span class="value">1365</span>
-        <span class="key">关注者</span>
+      <a class="item" href={key3_url}>
+        <span class="value">{key3_data}</span>
+        <span class="key">{key3}</span>
       </a>
     </div>
     <div class="operation">
-      <button class="zg-btn zg-btn-follow zm-rich-follow-btn">关注他</button>
+      <button class="zg-btn zg-btn-follow zm-rich-follow-btn">关注</button>
     </div>
   </div>
 </div>
+</script>
+<!-- remove this when building -->
+<script src="../card.js" charset="utf-8"></script>
+</body>
+</html>
