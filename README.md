@@ -4,7 +4,7 @@
 用卡片展示你的知乎账户： 
 
 <img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao-zhihu.png" width="400px">
-<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao.png" width="400px" style="float: right;">
+<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao.png" width="400px" align="right">
 
 ## 使用
 
