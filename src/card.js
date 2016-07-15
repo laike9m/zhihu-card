@@ -136,11 +136,14 @@ var qs = querystring();
       data['key3_url'] = userUrl + data.domain + '/' + eng2path[key3];
       data.avatar = data.avatar.replace('https', 'http');
       data.avatar = data.avatar.replace('_l', '_m');
-
       var card = d.createElement('div');
       card.className = 'zhihu-card';
       card.innerHTML = template(data);
       linky(card);
+      if (qs.button == 'no') {
+        var btn = d.getElementsByClassName('button')[0];
+        btn.parentNode.removeChild(btn);
+      }
     });
   }
 
