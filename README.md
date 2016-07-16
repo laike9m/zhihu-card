@@ -18,6 +18,8 @@
 * `theme`: 卡片外观主题，包括 `zhihu`(default) 和 `github`
 * `width`: 卡片宽度，默认值是 400
 * `height`: 卡片高度
+* `button`: 是否显示“关注”按钮，取值为 `yes`(default)、`no`
+* `description`: 在 `github` 主题中是否显示用户个人简介，取值为 `yes`(default)、`no`
 * `key1`, `key2`, `key3`: 卡片的三栏中显示数值的类型，取值和含义如下：
 
     | 取值     | 含义       |
@@ -42,11 +44,6 @@
 <script src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
 ```
 
-## Mixed Content 
-由于后端 API 是非 HTTPS 的，在 HTTPS 网站上使用时会引发 [mixed content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content) 警告。虽然一般也没什么问题，毕竟个人主页一般不会包含敏感信息。
-
-想彻底解决只能买域名+证书，由于我不想备案所以不打算做。不知道有没有好心人赞助个备案过的域名……
-
 # English Version
 
 Card to show your profile on [zhihu.com](https://www.zhihu.com/).
@@ -63,6 +60,8 @@ Available data parameters are:
 * `theme`: card appearance theme, options: `zhihu`(default), `github`
 * `width`: card width, default is 400
 * `height`: card height
+* `button`: whether to show "follow" button，options: `yes`(default), `no`
+* `description`: when using `github` theme, whether to show user description, options: `yes`(default), `no`
 * `key1`, `key2`, `key3`: control values displayed in three columns, available values and their meaning are shown below:
 
     | value     | meaning       |
