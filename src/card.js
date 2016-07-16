@@ -94,7 +94,9 @@ var qs = querystring();
     d.body.appendChild(card);
     if (qs.description == 'no') {
       var des = d.getElementsByClassName('footer')[0];
-      des.setAttribute('style', 'display:none');
+      if (des) {
+        des.setAttribute('style', 'display:none');
+      }
     }
     if (qs.button == 'no') {
       var btn = d.getElementsByClassName('button')[0];
