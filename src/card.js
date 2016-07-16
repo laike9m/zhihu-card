@@ -92,6 +92,14 @@ var qs = querystring();
       })(links[i]);
     }
     d.body.appendChild(card);
+    if (qs.description == 'no') {
+      var des = d.getElementsByClassName('footer')[0];
+      des.setAttribute('style', 'display:none');
+    }
+    if (qs.button == 'no') {
+      var btn = d.getElementsByClassName('button')[0];
+      btn.parentNode.removeChild(btn);
+    }
     d.body.className = 'ready';
     if (parent !== self && parent.postMessage) {
       var height = Math.max(
@@ -110,10 +118,8 @@ var qs = querystring();
   }
 
   function zhihuCard(userhash) {
-
     var url = apiUrl + userhash;
     request(url, function(data) {
-
       data = data || {};
       var defaults = '?'; // 默认显示的字符
       // message 存在说明data没有获取到数据，不存储，用 cache里的数据
@@ -136,14 +142,11 @@ var qs = querystring();
       data['key3_url'] = userUrl + data.domain + '/' + eng2path[key3];
       data.avatar = data.avatar.replace('https', 'http');
       data.avatar = data.avatar.replace('_l', '_m');
+
       var card = d.createElement('div');
       card.className = 'zhihu-card';
       card.innerHTML = template(data);
       linky(card);
-      if (qs.button == 'no') {
-        var btn = d.getElementsByClassName('button')[0];
-        btn.parentNode.removeChild(btn);
-      }
     });
   }
 

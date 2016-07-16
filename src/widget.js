@@ -45,6 +45,7 @@
     var key2 = querydata(card, 'key2') || 'agree';
     var key3 = querydata(card, 'key3') || 'follower';
     var button = querydata(card, 'button') || "yes";
+    var description = querydata(card, 'description') || "yes";
     var identity = 'zhcard-' + userhash + '-' + count;
 
     var iframe = d.createElement('iframe');
@@ -53,7 +54,7 @@
     iframe.setAttribute('scrolling', 0);
     iframe.setAttribute('allowtransparency', true);
 
-    var url = cardurl + '?userhash=' + userhash + '&identity=' + identity + "&button=" + button;
+    var url = cardurl + '?userhash=' + userhash + '&identity=' + identity + "&button=" + button + "&description=" + description;
     url += '&key1=' + key1 + '&key2=' + key2 + '&key3=' + key3;
     iframe.src = url;
     iframe.width = width || Math.min(card.parentNode.clientWidth || 400, 400);
