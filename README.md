@@ -12,8 +12,15 @@
 
 ```html
 <div class="zhihu-card" data-userhash="1f644a1b7da169d2b56e1a4c6da61fea"></div>
-<script src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
+<script src="https://cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
 ```
+你也可以使用 uid（个人网址的最后一部分） 作为 `data-userhash` 的值，如下：
+
+```html
+<div class="zhihu-card" data-userhash="cheng-hao-81"></div>
+<script src="https://cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
+```
+
 注意 `widget.js` 一定要放在 `<div>` 的后面。
 
 其它可用的 `data-xx` 参数包括:
@@ -24,16 +31,16 @@
 * `description`: 在 `github` 主题中是否显示用户个人简介，取值为 `yes`(default)、`no`
 * `key1`, `key2`, `key3`: 卡片的三栏中显示数值的类型，取值和含义如下：
 
-    | 取值     | 含义       |
-    |----------|------------|
-    | ask      | 提问数量   |
-    | answer   | 回答数量   |
-    | post     | 文章数量   |
-    | agree    | 赞同数量   |
-    | thanks   | 感谢数量   |
-    | follower | 关注者数量 |
+  | 取值       | 含义    |
+  | -------- | ----- |
+  | ask      | 提问数量  |
+  | answer   | 回答数量  |
+  | post     | 文章数量  |
+  | agree    | 赞同数量  |
+  | thanks   | 感谢数量  |
+  | follower | 关注者数量 |
     默认值 `key1=answer, key2=agree, key3=follower`
-    
+
 ### 获取 userhash
 在个人主页里（比如 https://www.zhihu.com/people/laike9m ），打开页面调试工具，搜索 `user_hash`，结果如下图所示:
 
@@ -41,7 +48,7 @@
 
 ## 例子
 ```html
-<div class="zhihu-card" data-userhash="1f644a1b7da169d2b56e1a4c6da61fea"
+<div class="zhihu-card" data-userhash="cheng-hao-81"
     data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
 <script src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
 ```
@@ -54,8 +61,15 @@ Card to show your profile on [zhihu.com](https://www.zhihu.com/).
 
 ```html
 <div class="zhihu-card" data-userhash="6487fb46d752cc83f9a5eebf2134ed1c"></div>
-<script src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
+<script src="https://cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
 ```
+You can also use uid(last part of your homepage url) as `data-userhash`'s value, like this: 
+
+```html
+<div class="zhihu-card" data-userhash="cheng-hao-81"></div>
+<script src="https://cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
+```
+
 Make sure to place `widget.js` behind/under `<div>`.
 
 Available data parameters are:
@@ -66,19 +80,19 @@ Available data parameters are:
 * `description`: when using `github` theme, whether to show user description, options: `yes`(default), `no`
 * `key1`, `key2`, `key3`: control values displayed in three columns, available values and their meaning are shown below:
 
-    | value     | meaning       |
-    |----------|------------|
-    | ask      | number of questions   |
-    | answer   | number of answers   |
-    | post     | number of posts  |
-    | agree    | number of agree   |
-    | thanks   | number of thanks   |
-    | follower | number of followers |
+  | value    | meaning             |
+  | -------- | ------------------- |
+  | ask      | number of questions |
+  | answer   | number of answers   |
+  | post     | number of posts     |
+  | agree    | number of agree     |
+  | thanks   | number of thanks    |
+  | follower | number of followers |
     default: `key1=answer, key2=agree, key3=follower`
 
 ## Example
 ```html
-<div class="zhihu-card" data-userhash="1f644a1b7da169d2b56e1a4c6da61fea"
+<div class="zhihu-card" data-userhash="cheng-aho-81"
     data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
 <script src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
 ```
