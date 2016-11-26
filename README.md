@@ -51,8 +51,7 @@ Card to show your profile on [zhihu.com](https://www.zhihu.com/).
 
 ## Usage
 
-
-Use last part of your homepage url as `data-userhash`'s value, like this:
+Use the last part of your homepage url as `data-userhash`'s value, like this:
 ![](images/uid.png)
 
 ```html
