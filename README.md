@@ -1,4 +1,4 @@
-![](images/01.png)
+![](images/logo.png)
 
 ## 用卡片展示你的知乎账户(<a href="http://jsrun.net/pUKKp?uid=322" target="_blank">Try it!</a>)
 
@@ -10,11 +10,8 @@
 
 ## 使用
 
-```html
-<div class="zhihu-card" data-userhash="1f644a1b7da169d2b56e1a4c6da61fea"></div>
-<script src="https://cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
-```
-你也可以使用 uid（个人网址的最后一部分） 作为 `data-userhash` 的值，如下：
+使用个人网址的最后一部分作为 `data-userhash` 的值，如下：
+![](images/uid.png)
 
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"></div>
@@ -41,11 +38,6 @@
   | follower | 关注者数量 |
     默认值 `key1=answer, key2=agree, key3=follower`
 
-### 获取 userhash
-在个人主页里（比如 https://www.zhihu.com/people/laike9m ），打开页面调试工具，搜索 `user_hash`，结果如下图所示:
-
-<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/userhash.png" width="600px">
-
 ## 例子
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"
@@ -59,11 +51,9 @@ Card to show your profile on [zhihu.com](https://www.zhihu.com/).
 
 ## Usage
 
-```html
-<div class="zhihu-card" data-userhash="6487fb46d752cc83f9a5eebf2134ed1c"></div>
-<script src="https://cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
-```
-You can also use uid(last part of your homepage url) as `data-userhash`'s value, like this: 
+
+Use last part of your homepage url as `data-userhash`'s value, like this:
+![](images/uid.png)
 
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"></div>
@@ -96,11 +86,6 @@ Available data parameters are:
     data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
 <script src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
 ```
-
-## Where to find your userhash
-Go to your profile page, for me it's https://www.zhihu.com/people/laike9m. Inspect this page and search for `user_hash`. See example below:
-
-<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/userhash.png" width="600px">
 
 ## 致谢
 特别感谢 @lepture 和他的 [github-cards](https://github.com/lepture/github-cards) 库。zhihu-card 的前端部分完全是照着 github-cards 写的。
