@@ -17,6 +17,7 @@ ga('create', 'UA-69544114-2', 'auto');
 ga('send', 'pageview');
 '''
 
+
 def tinyhtml(text):
     lines = re.split('(<[^>]+>)', text)
     rv = []
@@ -53,7 +54,8 @@ def create_card(theme):
     with open('src/card.js', 'rb') as f:
         content = f.read()
         # use real API url
-        content = content.replace('http://localhost:8001', 'https://cr-inn.com')
+        content = content.replace(
+            'http://localhost:8001', 'https://cr-inn.com')
 
     js = shell(['uglifyjs', '-m'], content)
 
@@ -76,6 +78,7 @@ def create_widget():
     with open('jsdelivr/widget.js', 'wb') as f:
         f.write(js)
 
+
 create_widget()
 
 if not os.path.isdir('jsdelivr/theme'):
@@ -83,5 +86,3 @@ if not os.path.isdir('jsdelivr/theme'):
 
 create_card('zhihu')
 create_card('github')
-
-        
