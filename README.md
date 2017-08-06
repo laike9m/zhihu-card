@@ -81,7 +81,7 @@ Available data parameters are:
 
 ## Example
 ```html
-<div class="zhihu-card" data-userhash="cheng-aho-81"
+<div class="zhihu-card" data-userhash="cheng-hao-81"
     data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
 <script src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
 ```
