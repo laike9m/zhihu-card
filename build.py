@@ -3,6 +3,7 @@
 import json
 import os
 import re
+import sys
 from os import path
 from subprocess import PIPE, Popen
 
@@ -37,75 +38,73 @@ def shell(cmd, data=None):
     return stdout.decode('utf-8')
 
 
-def create_card(theme):
-    with open('src/theme/%s.html' % theme) as f:
-        template = f.read()
-        start = template.find('<script')
-        end = template.find('</script>') + len('</script>')
-        template = template[start:end]
+class GenFiles:
 
-    html = (
-        '<!doctype html><html><body>'
-        '<style type="text/css">%s</style>%s'
-        '<script>%s</script>'
-        '</body></html>'
-    )
+    def __init__(self):
+        try:
+            if sys.argv[1] == 'prodtest':
+                print('Generting prodtest files...')
+                self.mode = 'prodtest'
+                self.output_dir = 'prodtest'
+                self.version = 'master'
+        except IndexError:
+            print('Generting dist files...')
+            self.mode = 'dist'
+            self.output_dir = 'dist'
+            with open('package.json') as f:
+                self.version = json.load(f)['version']
 
-    css = shell(['cleancss', 'src/theme/%s.css' % theme])
+    def create_card(self, theme):
+        with open('src/theme/%s.html' % theme) as f:
+            template = f.read()
+            start = template.find('<script')
+            end = template.find('</script>') + len('</script>')
+            template = template[start:end]
 
-    with open('src/card.js', 'r') as f:
-        content = f.read()
-        # use real API url
-        content = content.replace(
-            'http://localhost:8001', 'https://cr-inn.com')
+        html = (
+            '<!doctype html><html><body>'
+            '<style type="text/css">%s</style>%s'
+            '<script>%s</script>'
+            '</body></html>'
+        )
 
-    js = shell(['uglifyjs', '-m'], content)
+        css = shell(['cleancss', 'src/theme/%s.css' % theme])
 
-    out = html % (css, tinyhtml(template), js)
-    with open('dist/theme/%s.html' % theme, 'w') as f:
-        f.write(out)
+        with open('src/card.js', 'r') as f:
+            content = f.read()
+            # use real API url
+            content = content.replace(
+                'http://localhost:8001', 'https://cr-inn.com')
 
+        js = shell(['uglifyjs', '-m'], content)
 
-def create_widget():
-    url = 'https://cdn.rawgit.com/laike9m/zhihu-card/%s/' % get_version()
+        out = html % (css, tinyhtml(template), js)
+        with open(f'{self.output_dir}/theme/%s.html' % theme, 'w') as f:
+            f.write(out)
 
-    with open('src/widget.js') as f:
-        content = f.read()
-        content = content.replace('replacethis', url)
+    def create_widget(self):
+        url = f'https://cdn.rawgit.com/laike9m/zhihu-card/{self.version}/'
 
-    js = shell(['uglifyjs', '-m'], content)
-    with open('dist/widget.js', 'w') as f:
-        f.write(js)
+        with open('src/widget.js') as f:
+            content = f.read()
+            content = content.replace('replacethis', url)
 
-
-def update_readme_and_push():
-    version = get_version()
-
-    # update README
-    widget_url = (f'//cdn.rawgit.com/laike9m/zhihu-card/{version}'
-                  '/dist/widget.js')
-    widget_url_pattern = '//cdn.*/widget.js'
-    with open('README.md', 'r+') as f:
-        updated_content = re.sub(widget_url_pattern, widget_url, f.read())
-        f.seek(0)
-        f.write(updated_content)
-
-    print(shell(['git', 'add', '--all']))
-    print(shell(['git', 'commit', '-am', f'bump version to {version}']))
-    print(shell(['git', 'tag', '-a', f'{version}', '-m' f'v{version}']))
-    print(shell(['git', 'push']))
+        js = shell(['uglifyjs', '-m'], content)
+        with open(f'{self.output_dir}/widget.js', 'w') as f:
+            f.write(js)
 
 
-def get_version():
-    with open('package.json') as f:
-        return json.load(f)['version']
+def main():
+    if not os.path.isdir('dist/theme'):
+        os.makedirs('dist/theme')
+    if not os.path.isdir('prodtest/theme'):
+        os.makedirs('prodtest/theme')
+
+    g = GenFiles()
+    g.create_widget()
+    g.create_card('zhihu')
+    g.create_card('github')
 
 
 if __name__ == '__main__':
-    if not os.path.isdir('dist/theme'):
-        os.makedirs('dist/theme')
-
-    create_widget()
-    create_card('zhihu')
-    create_card('github')
-    # update_readme_and_push()
+    main()
