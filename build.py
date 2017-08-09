@@ -33,7 +33,7 @@ def shell(cmd, data=None):
     if isinstance(data, str):
         data = data.encode('utf-8')
     stdout, stderr = p.communicate(input=data)
-    if not stdout:
+    if stderr:
         raise RuntimeError(stderr)
     return stdout.decode('utf-8')
 

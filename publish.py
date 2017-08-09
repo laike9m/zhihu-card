@@ -4,7 +4,7 @@ import re
 from build import shell
 
 
-def update_readme_and_push(self):
+def update_readme_and_push():
     with open('package.json') as f:
         version = json.load(f)['version']
     # update README
@@ -16,11 +16,12 @@ def update_readme_and_push(self):
         f.seek(0)
         f.write(updated_content)
 
+    print(shell(['git', 'status']))
     print(shell(['git', 'add', '--all']))
     print(shell(['git', 'commit', '-am',
                  f'bump version to {version}']))
     print(shell(['git', 'tag', '-a', f'{version}',
-                 '-m' f'v{version}']))
+                 '-m', f'v{version}']))
     print(shell(['git', 'push']))
 
 
