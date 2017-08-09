@@ -18,11 +18,11 @@ def update_readme_and_push():
         f.write(updated_content)
 
     g = git.cmd.Git(os.getcwd())
-    g.status()
-    g.add('--all')
-    g.commit('-a', m=f'bump version to {version}')
-    g.tag(a=f'{version}', m=f'v{version}')
-    g.push()
+    print(g.status())
+    print(g.add('--all'))
+    print(g.commit('-a', m=f'bump version to {version}'))
+    print(g.tag(a=f'{version}', m=f'v{version}'))
+    print(g.push())
 
 
 if __name__ == '__main__':
