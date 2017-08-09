@@ -1,7 +1,8 @@
 import json
+import os
 import re
 
-from build import shell
+import git
 
 
 def update_readme_and_push():
@@ -16,13 +17,12 @@ def update_readme_and_push():
         f.seek(0)
         f.write(updated_content)
 
-    print(shell(['git', 'status']))
-    print(shell(['git', 'add', '--all']))
-    print(shell(['git', 'commit', '-am',
-                 f'bump version to {version}']))
-    print(shell(['git', 'tag', '-a', f'{version}',
-                 '-m', f'v{version}']))
-    print(shell(['git', 'push']))
+    g = git.cmd.Git(os.getcwd())
+    g.status()
+    g.add('--all')
+    g.commit('-a', m=f'bump version to {version}')
+    g.tag(a=f'{version}', m=f'v{version}')
+    g.push()
 
 
 if __name__ == '__main__':
