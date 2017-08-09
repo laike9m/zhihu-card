@@ -1,6 +1,6 @@
 .PHONY: all prodtest build raw_build clean
 
-raw_build:
+dry_build:
 	python3 build.py
 	python3 build.py prodtest
 

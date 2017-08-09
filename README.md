@@ -1,6 +1,6 @@
 ![](images/logo.png)
 
-## 用卡片展示你的知乎账户(<a href="http://jsrun.net/pUKKp?uid=322" target="_blank">Try it!</a>) 注意：如果 zhihu-card 显示不正常，请尽快升级到 Chrome 59！
+## 用卡片展示你的知乎账户(<a href="http://jsrun.net/pUKKp?uid=322" target="_blank">Try it!</a>) 
 
 [(Eng ver.)](#english-version)  
 
