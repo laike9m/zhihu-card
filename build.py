@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-import re
-import os
 import json
+import os
+import re
 from os import path
-from subprocess import Popen, PIPE
+from subprocess import PIPE, Popen
 
 os.chdir(path.dirname(path.abspath(__file__)))
 
@@ -29,10 +29,12 @@ def tinyhtml(text):
 
 def shell(cmd, data=None):
     p = Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+    if isinstance(data, str):
+        data = data.encode('utf-8')
     stdout, stderr = p.communicate(input=data)
     if not stdout:
         raise RuntimeError(stderr)
-    return stdout
+    return stdout.decode('utf-8')
 
 
 def create_card(theme):
@@ -51,7 +53,7 @@ def create_card(theme):
 
     css = shell(['cleancss', 'src/theme/%s.css' % theme])
 
-    with open('src/card.js', 'rb') as f:
+    with open('src/card.js', 'r') as f:
         content = f.read()
         # use real API url
         content = content.replace(
@@ -60,29 +62,50 @@ def create_card(theme):
     js = shell(['uglifyjs', '-m'], content)
 
     out = html % (css, tinyhtml(template), js)
-    with open('jsdelivr/theme/%s.html' % theme, 'wb') as f:
+    with open('dist/theme/%s.html' % theme, 'w') as f:
         f.write(out)
 
 
 def create_widget():
-    with open('package.json') as f:
-        pkg = json.load(f)
-
-    url = '//cdn.jsdelivr.net/zhihu-card/%s/' % pkg['version']
+    url = 'https://cdn.rawgit.com/laike9m/zhihu-card/%s/' % get_version()
 
     with open('src/widget.js') as f:
         content = f.read()
         content = content.replace('replacethis', url)
 
     js = shell(['uglifyjs', '-m'], content)
-    with open('jsdelivr/widget.js', 'wb') as f:
+    with open('dist/widget.js', 'w') as f:
         f.write(js)
 
 
-create_widget()
+def update_readme_and_push():
+    version = get_version()
 
-if not os.path.isdir('jsdelivr/theme'):
-    os.makedirs('jsdelivr/theme')
+    # update README
+    widget_url = (f'//cdn.rawgit.com/laike9m/zhihu-card/{version}'
+                  '/dist/widget.js')
+    widget_url_pattern = '//cdn.*/widget.js'
+    with open('README.md', 'r+') as f:
+        updated_content = re.sub(widget_url_pattern, widget_url, f.read())
+        f.seek(0)
+        f.write(updated_content)
 
-create_card('zhihu')
-create_card('github')
+    print(shell(['git', 'add', '--all']))
+    print(shell(['git', 'commit', '-am', f'bump version to {version}']))
+    print(shell(['git', 'tag', '-a', f'{version}', '-m' f'v{version}']))
+    print(shell(['git', 'push']))
+
+
+def get_version():
+    with open('package.json') as f:
+        return json.load(f)['version']
+
+
+if __name__ == '__main__':
+    if not os.path.isdir('dist/theme'):
+        os.makedirs('dist/theme')
+
+    create_widget()
+    create_card('zhihu')
+    create_card('github')
+    # update_readme_and_push()

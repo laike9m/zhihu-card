@@ -3,5 +3,4 @@ test:
 	cd src && python -m SimpleHTTPServer 5000
 
 build:
-	python build.py
-
+	python3 build.py
