@@ -1,6 +1,6 @@
 ![](images/logo.png)
 
-## 用卡片展示你的知乎账户(<a href="http://jsrun.net/pUKKp?uid=322" target="_blank">Try it!</a>) 
+## 用卡片展示你的知乎账户(<a href="http://jsrun.net/pUKKp?uid=322" target="_blank">Try it!</a>)
 
 [(Eng ver.)](#english-version)  
 
@@ -15,7 +15,7 @@
 
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"></div>
-<script src="https://cdn.rawgit.com/laike9m/zhihu-card/0.2.5/dist/widget.js"></script>
+<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.5/dist/widget.js"></script>
 ```
 
 注意 `widget.js` 一定要放在 `<div>` 的后面。
@@ -56,7 +56,7 @@ Use the last part of your homepage url as `data-userhash`'s value, like this:
 
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"></div>
-<script src="https://cdn.rawgit.com/laike9m/zhihu-card/0.2.5/dist/widget.js"></script>
+<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.5/dist/widget.js"></script>
 ```
 
 Make sure to place `widget.js` behind/under `<div>`.
