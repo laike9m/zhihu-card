@@ -8,6 +8,14 @@
 <img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao-zhihu.png" width="400px">
 <img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao.png" width="400px">
 
+## 国内用户必读
+
+**国内用户建议自行 host 所需文件，因为 CDN 被墙了｡ﾟ(ﾟ´ω`ﾟ)ﾟ｡**，步骤：
+1. 下载 [dist](https://github.com/laike9m/zhihu-card/tree/master/dist) 文件夹
+2. 打开 widget.js，替换 `https://cdn.rawgit.com/laike9m/zhihu-card/0.2.5/dist/` 指向你自己的网站
+3. 把 dist 文件夹中的内容放到上一步中替换的位置。比如上一步中替换为 `https://example.com/static/`，那么需要让 `https://example.com/static/theme/github.html` 能访问到对应文件。
+4. 在网站 html 中使用自己 host 的 widget.js，不要用 cdn 的
+
 ## 使用
 
 使用个人网址的最后一部分作为 `data-userhash` 的值，如下：
