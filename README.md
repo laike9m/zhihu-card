@@ -38,7 +38,8 @@
   | agree    | 赞同数量  |
   | thanks   | 感谢数量  |
   | follower | 关注者数量 |
-    默认值 `key1=answer, key2=agree, key3=follower`
+
+默认值 `key1=answer, key2=agree, key3=follower`
 
 ## 例子
 ```html
@@ -79,7 +80,8 @@ Available data parameters are:
   | agree    | number of agree     |
   | thanks   | number of thanks    |
   | follower | number of followers |
-    default: `key1=answer, key2=agree, key3=follower`
+
+default: `key1=answer, key2=agree, key3=follower`
 
 ## Example
 ```html
