@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import json
 import os
 import re
 import sys
@@ -46,13 +45,10 @@ class GenFiles:
                 print('Generting prodtest files...')
                 self.mode = 'prodtest'
                 self.output_dir = 'prodtest'
-                self.version = 'master'
         except IndexError:
             print('Generting dist files...')
             self.mode = 'dist'
             self.output_dir = 'dist'
-            with open('package.json') as f:
-                self.version = json.load(f)['version']
 
     def create_card(self, theme):
         with open('src/theme/%s.html' % theme) as f:
@@ -83,8 +79,8 @@ class GenFiles:
             f.write(out)
 
     def create_widget(self):
-        url = ('https://cdn.rawgit.com/laike9m/zhihu-card/'
-               f'{self.version}/{self.output_dir}/')
+        url = ('https://laike9m.github.io/zhihu-card/'
+               f'master/{self.output_dir}/')
 
         with open('src/widget.js') as f:
             content = f.read()
