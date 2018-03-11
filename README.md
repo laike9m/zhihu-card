@@ -23,7 +23,7 @@
 
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"></div>
-<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.5/dist/widget.js"></script>
+<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.6/dist/widget.js"></script>
 ```
 
 注意 `widget.js` 一定要放在 `<div>` 的后面。
@@ -50,7 +50,7 @@
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"
     data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
-<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.5/dist/widget.js"></script>
+<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.6/dist/widget.js"></script>
 ```
 
 # English Version
@@ -64,7 +64,7 @@ Use the last part of your homepage url as `data-userhash`'s value, like this:
 
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"></div>
-<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.5/dist/widget.js"></script>
+<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.6/dist/widget.js"></script>
 ```
 
 Make sure to place `widget.js` behind/under `<div>`.
@@ -91,7 +91,7 @@ Available data parameters are:
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"
     data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
-<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.5/dist/widget.js"></script>
+<script src="//cdn.rawgit.com/laike9m/zhihu-card/0.2.6/dist/widget.js"></script>
 ```
 
 ## 致谢
