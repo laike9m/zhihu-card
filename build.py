@@ -74,7 +74,7 @@ class GenFiles:
             content = f.read()
             # use real API url
             content = content.replace(
-                'http://localhost:8001', 'https://cr-inn.com')
+                'http://localhost:8001', 'https://zhihu-card.info:445')
 
         js = shell(['uglifyjs', '-m'], content)
 
