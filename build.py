@@ -79,8 +79,7 @@ class GenFiles:
             f.write(out)
 
     def create_widget(self):
-        url = ('https://laike9m.github.io/zhihu-card/'
-               f'master/{self.output_dir}/')
+        url = (f'https://laike9m.github.io/zhihu-card/{self.output_dir}/')
 
         with open('src/widget.js') as f:
             content = f.read()
