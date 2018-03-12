@@ -92,6 +92,3 @@ default: `key1=answer, key2=agree, key3=follower`
 
 ## 致谢
 特别感谢 @lepture 和他的 [github-cards](https://github.com/lepture/github-cards) 库。zhihu-card 的前端部分完全是照着 github-cards 写的。
-cards 写的。
-。
-cards 写的。
