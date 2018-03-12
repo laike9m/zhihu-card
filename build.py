@@ -2,7 +2,6 @@
 
 import os
 import re
-import sys
 from os import path
 from subprocess import PIPE, Popen
 
@@ -40,15 +39,9 @@ def shell(cmd, data=None):
 class GenFiles:
 
     def __init__(self):
-        try:
-            if sys.argv[1] == 'prodtest':
-                print('Generting prodtest files...')
-                self.mode = 'prodtest'
-                self.output_dir = 'prodtest'
-        except IndexError:
-            print('Generting dist files...')
-            self.mode = 'dist'
-            self.output_dir = 'dist'
+        print('Generting dist files...')
+        self.mode = 'dist'
+        self.output_dir = 'dist'
 
     def create_card(self, theme):
         with open('src/theme/%s.html' % theme) as f:
@@ -70,7 +63,7 @@ class GenFiles:
             content = f.read()
             # use real API url
             content = content.replace(
-                'http://localhost:8001', 'https://zhihu-card.info:445')
+                'http://localhost:8001', 'https://zhihu-card.info:8443')
 
         js = shell(['uglifyjs', '-m'], content)
 
@@ -93,8 +86,6 @@ class GenFiles:
 def main():
     if not os.path.isdir('dist/theme'):
         os.makedirs('dist/theme')
-    if not os.path.isdir('prodtest/theme'):
-        os.makedirs('prodtest/theme')
 
     g = GenFiles()
     g.create_widget()
