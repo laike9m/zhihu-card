@@ -1,8 +1,6 @@
-# 2018.3 zhihu-card is back!!!
-
 ![](images/logo.png)
 
-## 用卡片展示你的知乎账户(<a href="https://jsfiddle.net/laike9m/y65L76cq/6/" target="_blank">Try it!</a>)
+## 用卡片展示你的知乎账户(<a href="https://jsfiddle.net/laike9m/y65L76cq/19/" target="_blank">Try it!</a>)
 
 [(Eng ver.)](#english-version)  
 
