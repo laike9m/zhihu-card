@@ -45,7 +45,7 @@
 ## 例子
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"
-    data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
+    data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github" data-suffix="@知乎"></div>
 <script src="https://laike9m.github.io/zhihu-card/dist/widget.js"></script>
 ```
 
@@ -71,6 +71,7 @@ Available data parameters are:
 * `height`: card height
 * `button`: whether to show "follow" button，options: `yes`(default), `no`
 * `description`: when using `github` theme, whether to show user description, options: `yes`(default), `no`
+* `suffix`: string shown after user name, default is empty
 * `key1`, `key2`, `key3`: control values displayed in three columns, available values and their meaning are shown below:
 
   | value    | meaning             |
@@ -87,7 +88,7 @@ default: `key1=answer, key2=agree, key3=follower`
 ## Example
 ```html
 <div class="zhihu-card" data-userhash="cheng-hao-81"
-    data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github"></div>
+    data-width="400" data-height="300" data-key1="answer" data-key2="agree" data-key3="post" data-theme="github" data-suffix="@zhihu"></div>
 <script src="https://laike9m.github.io/zhihu-card/dist/widget.js"></script>
 ```
 
