@@ -69,7 +69,7 @@ Available data parameters are:
 * `height`: card height
 * `button`: whether to show "follow" button，options: `yes`(default), `no`
 * `description`: when using `github` theme, whether to show user description, options: `yes`(default), `no`
-* `suffix`: string shown after user name, default is empty
+* `suffix`: string shown after user name, default is empty
 * `key1`, `key2`, `key3`: control values displayed in three columns, available values and their meaning are shown below:
 
   | value    | meaning             |
