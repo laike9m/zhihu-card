@@ -83,8 +83,8 @@ var qs = querystring();
     xhr.send();
   }
 
+  // 填充 target, set iframe height
   function linky(card) {
-    // 填充 target, set iframe height
     var links = card.getElementsByTagName('a');
     for (i = 0; i < links.length; i++) {
       (function(link) {
@@ -142,6 +142,7 @@ var qs = querystring();
       data['key1_url'] = userUrl + data.domain + '/' + eng2path[key1];
       data['key2_url'] = userUrl + data.domain + '/' + eng2path[key2];
       data['key3_url'] = userUrl + data.domain + '/' + eng2path[key3];
+      data['suffix'] = decodeURI(qs.suffix);
 
       var card = d.createElement('div');
       card.className = 'zhihu-card';
