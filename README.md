@@ -26,7 +26,7 @@
 * `height`: 卡片高度
 * `button`: 是否显示“关注”按钮，取值为 `yes`(default)、`no`
 * `description`: 在 `github` 主题中是否显示用户个人简介，取值为 `yes`(default)、`no`
-* `suffix`: 显示在用户名之后的字符串，默认为空
+* `suffix`: 显示在用户名之后的字符串，默认为空
 * `key1`, `key2`, `key3`: 卡片的三栏中显示数值的类型，取值和含义如下：
 
   | 取值       | 含义    |
