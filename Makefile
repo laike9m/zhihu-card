@@ -1,8 +1,4 @@
-.PHONY: all prodtest build clean
-
-build:
-	python3 build.py
-	python3 build.py prodtest
+.PHONY: prodtest
 
 # Test after pushing latest changes.
 prodtest:
