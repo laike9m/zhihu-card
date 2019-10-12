@@ -21,5 +21,5 @@ $ npm run build
 ### 测试生产文件
 
 ```bash
-$ make prodtest
+$ npm run prodtest
 ```
