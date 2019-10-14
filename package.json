@@ -6,12 +6,13 @@
   "author": "laike9m <laike9m@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/index.html src/theme/*.html --open",
+    "dev": "node run_dev.js",
     "build": "parcel build src/widget.js src/theme/*.html",
     "prodtest": "parcel src/prod_test.html --open"
   },
   "devDependencies": {
     "cssnano": "^4.1.10",
+    "express": "^4.17.1",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-inline-source": "^1.0.0"
   }
