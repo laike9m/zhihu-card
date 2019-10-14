@@ -56,3 +56,6 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+yarn.lock
+package-lock.json

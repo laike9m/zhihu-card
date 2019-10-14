@@ -13,9 +13,10 @@ function querystring() {
 }
 
 var qs = querystring();
+var urlRoot = process.env.ZHIHU_API_URL;
 
 (function(d) {
-  var apiUrl = 'http://localhost:8001/v1/user/',
+  var apiUrl = urlRoot + '/v1/user/',
     userUrl = "https://www.zhihu.com/people/",
     i;
   var eng2ch = {
