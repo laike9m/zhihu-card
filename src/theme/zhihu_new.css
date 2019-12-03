@@ -160,16 +160,15 @@ a {
   border-color: #0077e6;
   background-color: #0077e6;
 }
-.HoverCard-buttons .Button a {
+.HoverCard-buttons a.Button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
 .Zi {
   margin-right: 4px;
 }
-.HoverCard-buttons .Button+.Button {
-  margin-left: 16px;
-}
+
 .grey:hover {
   background-color: rgba(133,144,166,.06);
 }
