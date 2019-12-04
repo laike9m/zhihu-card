@@ -1,0 +1,59 @@
+<html><body> <meta charset="UTF-8"> <style>a{color:inherit;text-decoration:none}.HoverCard{-webkit-box-shadow:0 5px 20px rgba(26,26,26,.1);box-shadow:0 5px 20px rgba(26,26,26,.1);background:#fff;border-radius:2px;padding:0 12px 16px;font-size:14px;opacity:1;-webkit-transition:opacity .3s ease;transition:opacity .3s ease}.HoverCard-titleContainer,.HoverCard-titleText{display:-webkit-box;display:-ms-flexbox;display:flex}.HoverCard-titleContainer{position:relative;padding:8px 0;border-bottom:1px solid #f6f6f6;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:20px}.HoverCard-titleText{min-height:42px;padding-bottom:2px;margin-left:84px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;overflow:hidden;-webkit-box-flex:1;-ms-flex:1 1;flex:1 1}.HoverCard-title{font-size:16px;font-weight:500}.HoverCard-subtitle{margin-top:4px;font-weight:400}.HoverCard-subtitle,.HoverCard-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.Avatar{position:absolute;top:-20px;border:2px solid #fff;border-radius:4px;background:#fff}.ready{margin:10px}.HoverCard-item{padding:8px 16px;text-align:center;border:0;line-height:1.75}.NumberBoard{display:-webkit-box;display:-ms-flexbox;display:flex}.NumberBoard-item.Button{border:0;line-height:unset;font-size:unset}.NumberBoard-item.Button:hover,.NumberBoard-item.Button:hover .NumberBoard-itemName,.NumberBoard-item.Button:hover .NumberBoard-itemValue{background:0 0;color:#175199}.NumberBoard-item{-webkit-box-flex:1;-ms-flex:1 1;flex:1 1;height:auto;padding:0;line-height:inherit;background-color:transparent;border:0;border-radius:0}.Button{display:inline-block;padding:0 16px;font-size:14px;line-height:32px;color:#8590a6;text-align:center;cursor:pointer;background:0 0;border:1px solid;border-radius:3px}.NumberBoard-itemInner{text-align:center;line-height:1.6}.NumberBoard-itemName{font-size:14px;color:#8590a6}.NumberBoard-itemValue{display:inline-block;font-size:18px;color:#1a1a1a;font-weight:600;font-synthesis:style}.HoverCard-buttons{margin-top:16px}.HoverCard-buttons .Button{width:144px;box-sizing:border-box}.primary{color:#fff;background-color:#0084ff;border-color:#0084ff}.primary:hover{border-color:#0077e6;background-color:#0077e6}.HoverCard-buttons a.Button{display:inline-flex;align-items:center;justify-content:center}.Zi{margin-right:4px}.grey:hover{background-color:rgba(133,144,166,.06)}</style> <script id="zhihu-card" type="text/template">
+    <div class="HoverCard">
+      <div class="HoverCard-titleContainer">
+        <img class="Avatar" width="68" height="68" src="{avatar}" />
+        <div class="HoverCard-titleText">
+          <div class="HoverCard-title">
+            <span
+              ><a target="_blank" href="https://www.zhihu.com/people/{domain}"
+                >{name}{suffix}</a
+              ></span
+            >
+          </div>
+          <div class="HoverCard-subtitle">
+            <span class="ztext">{signature}</span>
+          </div>
+        </div>
+      </div>
+      <div class="HoverCard-item">
+        <div class="NumberBoard">
+          <a target="_blank" type="button" class="NumberBoard-item Button" href="{key1_url}"
+            ><div class="NumberBoard-itemInner">
+              <div class="NumberBoard-itemName">{key1}</div>
+              <strong class="NumberBoard-itemValue" title="{key1_data}"
+                >{key1_data}</strong
+              >
+            </div></a
+          ><a target="_blank" type="button" class="NumberBoard-item Button" href="{key2_url}"
+            ><div class="NumberBoard-itemInner">
+              <div class="NumberBoard-itemName">{key2}</div>
+              <strong class="NumberBoard-itemValue" title="{key2_data}"
+                >{key2_data}</strong
+              >
+            </div></a
+          ><a target="_blank" type="button" class="NumberBoard-item Button" href="{key3_url}"
+            ><div class="NumberBoard-itemInner">
+              <div class="NumberBoard-itemName">{key3}</div>
+              <strong class="NumberBoard-itemValue" title="{key3_data}"
+                >{key3_data}</strong
+              >
+            </div></a
+          >
+        </div>
+        <div class="HoverCard-buttons">
+          <a href="https://www.zhihu.com/people/{domain}" type="button" class="Button primary"
+            >​<svg
+              class="Zi"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              width="1.2em"
+              height="1.2em"
+            >
+              <path
+                d="M13.491 10.488s-.012-5.387 0-5.998c-.037-1.987-3.035-1.987-2.997 0-.038 1.912 0 5.998 0 5.998H4.499c-1.999.01-1.999 3.009 0 3.009s5.995-.01 5.995-.01v5.999c0 2.019 3.006 2.019 2.997 0-.01-2.019 0-5.998 0-5.998s3.996.009 6.004.009c2.008 0 2.008-3-.01-3.009h-5.994z"
+                fill-rule="evenodd"
+              ></path></svg>关注</a>
+        </div>
+      </div>
+    </div>
+    </script> <script charset="utf-8">parcelRequire=function(e,t,r,n){var o,a="function"==typeof parcelRequire&&parcelRequire,i="function"==typeof require&&require;function s(r,n){if(!t[r]){if(!e[r]){var o="function"==typeof parcelRequire&&parcelRequire;if(!n&&o)return o(r,!0);if(a)return a(r,!0);if(i&&"string"==typeof r)return i(r);var l=new Error("Cannot find module '"+r+"'");throw l.code="MODULE_NOT_FOUND",l}f.resolve=function(t){return e[r][1][t]||t},f.cache={};var u=t[r]=new s.Module(r);e[r][0].call(u.exports,f,u,u.exports,this)}return t[r].exports;function f(e){return s(f.resolve(e))}}s.isParcelRequire=!0,s.Module=function(e){this.id=e,this.bundle=s,this.exports={}},s.modules=e,s.cache=t,s.parent=a,s.register=function(t,r){e[t]=[function(e,t){t.exports=r},{}]};for(var l=0;l<r.length;l++)try{s(r[l])}catch(e){o||(o=e)}if(r.length){var u=s(r[r.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=u:"function"==typeof define&&define.amd&&define(function(){return u})}if(parcelRequire=s,o)throw o;return s}({RDr1:[function(e,t,r){var n=function(){var e,t=window.location.href,r=t.slice(t.indexOf("?")+1).split("&"),n=[];for(i=0;i<r.length;i++)e=r[i].split("="),n.push(e[0]),n[e[0]]=e[1];return n}();!function(e){var t,r="https://www.zhihu.com/people/",o={ask:"提问",answer:"回答",post:"文章",agree:"赞同",thanks:"感谢",follower:"关注者"},a={ask:"asks",answer:"answers",post:"posts",agree:"",thanks:"",follower:"followers"};function i(e,t){try{if(window.localStorage){if(!t){var r=localStorage[e];return r?JSON.parse(r):null}t._timestamp=(new Date).valueOf(),localStorage[e]=JSON.stringify(t)}}catch(e){}}function s(e){return null==e||void 0===e?null:e<1e4?e.toString():(e=parseInt(e/1e3)).toFixed(0)+"k"}var l,u,f=e.createElement("meta");f.name="referrer",f.content="no-referrer",e.head.appendChild(f),l=n.userhash,function(e,t){var r=i(e);if(r&&r._timestamp&&(new Date).valueOf()-r._timestamp<216e5)return t(r);var n=new XMLHttpRequest;n.open("GET",e,!0),n.onload=function(){t(JSON.parse(n.response))},n.send()}(u="https://zhihu-card.info:8443/v1/user/"+l,function(l){void 0===(l=l||{}).name?l=i(u)||l:i(u,l);var f=n.key1,c=n.key2,d=n.key3;l.key1_data=s(l[f])||"?",l.key2_data=s(l[c])||"?",l.key3_data=s(l[d])||"?",l.key1=o[f],l.key2=o[c],l.key3=o[d],l.key1_url=r+l.domain+"/"+a[f],l.key2_url=r+l.domain+"/"+a[c],l.key3_url=r+l.domain+"/"+a[d],l.suffix=decodeURI(n.suffix);var p=e.createElement("div");p.className="zhihu-card",p.innerHTML=function(r){var n=e.getElementById("zhihu-card").innerHTML,o=n.match(/{([^}]+)}/g);for(t=0;t<o.length;t++)n=n.replace(o[t],r[o[t].slice(1,-1)]);return n}(l),function(r){var o=r.getElementsByTagName("a");for(t=0;t<o.length;t++)o[t].target="_"+(n.target||"blank");if(e.body.appendChild(r),"no"==n.description){var a=e.getElementsByClassName("footer")[0];a&&a.setAttribute("style","display:none")}if("no"==n.button){var i=e.getElementsByClassName("button")[0];i.parentNode.removeChild(i)}if(e.body.className="ready",parent!==self&&parent.postMessage){var s=Math.max(e.body.scrollHeight,e.documentElement.scrollHeight,e.body.offsetHeight,e.documentElement.offsetHeight,e.body.clientHeight,e.documentElement.clientHeight);parent.postMessage({height:s,sender:n.identity||"*"},"*")}}(p)})}(document)},{}]},{},["RDr1"]);</script> </body></html>

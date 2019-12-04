@@ -2,12 +2,11 @@
 
 ## 用卡片展示你的知乎账户(<a href="https://jsfiddle.net/laike9m/y65L76cq/19/" target="_blank">Try it!</a>)
 
-[(Eng ver.)](#english-version)  
+[(Eng ver.)](#english-version)
 
-
-<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao-zhihu.png" width="400px">
-<img src="https://raw.githubusercontent.com/laike9m/zhihu-card/master/images/chenghao.png" width="400px">
-
+<img src="images/chenghao-zhihu.png" width="400px">
+<img src="images/chenghao-zhihu_new.png" width="400px">
+<img src="images/chenghao.png" width="400px">
 ## 使用
 
 使用个人网址的最后一部分作为 `data-userhash` 的值，如下：
@@ -21,7 +20,7 @@
 注意 `widget.js` 一定要放在 `<div>` 的后面。
 
 其它可用的 `data-xx` 参数包括:
-* `theme`: 卡片外观主题，包括 `zhihu`(default) 和 `github`
+* `theme`: 卡片外观主题，包括 `zhihu`(default), `zhihu_new` 和 `github`
 * `width`: 卡片宽度，默认值是 400
 * `height`: 卡片高度
 * `button`: 是否显示“关注”按钮，取值为 `yes`(default)、`no`
@@ -64,7 +63,7 @@ Use the last part of your homepage url as `data-userhash`'s value, like this:
 Make sure to place `widget.js` behind/under `<div>`.
 
 Available data parameters are:
-* `theme`: card appearance theme, options: `zhihu`(default), `github`
+* `theme`: card appearance theme, options: `zhihu`(default), `zhihu_new` and `github`
 * `width`: card width, default is 400
 * `height`: card height
 * `button`: whether to show "follow" button，options: `yes`(default), `no`
