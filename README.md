@@ -1,3 +1,7 @@
+## 2022.4.24 更新: 由于知乎改了 OAuth 接口，且依赖库 zhihu-oauth 也不再更新，本项目已无法正常工作。感谢用户们五年依赖的支持。
+
+
+
 ![](images/logo.png)
 
 ## 用卡片展示你的知乎账户(<a href="https://jsfiddle.net/laike9m/y65L76cq/28/" target="_blank">Try it!</a>)
